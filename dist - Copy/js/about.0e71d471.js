@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkeborrowadmin"]=self["webpackChunkeborrowadmin"]||[]).push([[443],{7381:function(n,r,a){a.r(r),a.d(r,{default:function(){return d}});var e=a(3396);const u={class:"about"},t=(0,e._)("h1",null,"This is an about page",-1),o=[t];function s(n,r){return(0,e.wg)(),(0,e.iD)("div",u,o)}var i=a(89);const c={},b=(0,i.Z)(c,[["render",s]]);var d=b}}]);
-//# sourceMappingURL=about.0e71d471.js.map

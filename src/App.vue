@@ -2,6 +2,7 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
+    <router-link to="/login">Login</router-link> |
     <router-link to="/agricultureView">Agriculture</router-link> |
     <router-link to="/add-agriculture">Add Agriculture</router-link> 
   </nav>
