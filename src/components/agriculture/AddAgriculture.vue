@@ -17,7 +17,7 @@
                         </div>
                         <div class="col">
                             <label for="kuantiti">Kuantiti</label>
-                            <input type="text" class="form-control" placeholder="Kuantiti" v-model="kuantiti">
+                            <input type="number" class="form-control" placeholder="Kuantiti" v-model="kuantiti">
                         </div>
                     </div>
                     

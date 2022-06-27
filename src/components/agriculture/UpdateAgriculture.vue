@@ -27,7 +27,7 @@
                         <div class="col">
                             <label for="kuantiti">Kuantiti</label>
                             <input 
-                            type="text" 
+                            type="number" 
                             class="form-control" 
                             placeholder="Kuantiti" 
                             v-model="agriInfo.kuantiti">
