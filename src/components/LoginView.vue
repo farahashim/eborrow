@@ -1,5 +1,6 @@
 <template>
-  <div class="login">
+  <div class="col-md-3 offset-md-6">
+    <div class="login">
     <form>
   <!-- Email input -->
   <div class="form-outline mb-4">
@@ -53,6 +54,7 @@
     </button>
   </div>
 </form>
+  </div>
   </div>
 </template>
 
