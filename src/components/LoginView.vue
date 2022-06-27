@@ -1,4 +1,5 @@
 <template>
+  <h1>Log Masuk</h1>
   <div class="col-md-3 offset-md-6">
     <div class="login">
     <form>
