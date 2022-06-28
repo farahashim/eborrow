@@ -2,9 +2,11 @@
   <div class="update-agriculture">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="update-agri-head">
                 <h1>Fakulti Perladangan</h1>
                 <h2>Kemas Kini Barang Disini</h2>
+            </div>
+            <div class="update-agri-form">
                 <form @submit.prevent="updateAgri">
                     <div class="form-group">
                         <label for="namaBarang">Nama Barang</label>
@@ -15,23 +17,21 @@
                         placeholder="Nama Barang" 
                         v-model="agriInfo.namaBarang">
                     </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="noSiri">No. Siri</label>
-                            <input 
-                            type="text" 
-                            class="form-control" 
-                            placeholder="no. Siri" 
-                            v-model="agriInfo.noSiri">
-                        </div>
-                        <div class="col">
-                            <label for="kuantiti">Kuantiti</label>
-                            <input 
-                            type="number" 
-                            class="form-control" 
-                            placeholder="Kuantiti" 
-                            v-model="agriInfo.kuantiti">
-                        </div>
+                    <div class="form-group">
+                        <label for="noSiri">No. Siri</label>
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="no. Siri" 
+                        v-model="agriInfo.noSiri">
+                    </div>
+                    <div class="form-group">
+                        <label for="kuantiti">Kuantiti</label>
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Kuantiti" 
+                        v-model="agriInfo.kuantiti">
                     </div>
                     <div class="form-group">
                         <label for="catatan">Catatan</label>
@@ -86,7 +86,7 @@ export default {
       async updateAgri() {
           await setDoc(this.docRef, this.agriInfo);
           alert(
-              `The city with ID of ${this.agriId} has been updated successfully!`
+              `Barang bernombor ID ${this.agriId} berjaya dikemas kini!`
           );
           this.$router.push({name: 'agricultureView'});
       },
@@ -100,8 +100,23 @@ export default {
 </script>
 
 <style>
+.update-agri-head {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.update-agri-form .form-group {
+    padding-left: 250px;
+    padding-right: 80px;
+    padding-top: 12px;
+}
+.update-agri-form .col {
+    padding-top: 20px;
+    padding-left: 550px;
+    padding-bottom: 40px;
+}
 .space {
-  width: 4px;
+  width: 8px;
   height: auto;
   display: inline-block;
 }
