@@ -4,12 +4,16 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import AgricultureView from '../views/AgricultureView.vue'
 import AdminView from '../views/AdminView.vue'
+import UserView from '../views/UserView.vue'
 /*----------------AGRICULTURE----------------*/
 import AddAgriculture from '../components/agriculture/AddAgriculture.vue'
 import UpdateAgriculture from '../components/agriculture/UpdateAgriculture.vue'
 /*-------------------ADMIN-------------------*/
 import AddAdmin from '../components/admin/AddAdmin.vue'
 import UpdateAdmin from '../components/admin/UpdateAdmin.vue'
+/*-------------------USER--------------------*/
+import AddUser from '../components/user/AddUser.vue'
+import UpdateUser from '../components/user/UpdateUser.vue'
 
 const routes = [{
         path: '/',
@@ -46,6 +50,11 @@ const routes = [{
         component: AdminView
     },
     {
+        path: '/userView',
+        name: 'userView',
+        component: UserView
+    },
+    {
         path: '/add-agriculture',
         name: 'addAgriculture',
         component: AddAgriculture
@@ -64,6 +73,16 @@ const routes = [{
         path: '/Admins/:adminId',
         name: 'updateAdmin',
         component: UpdateAdmin
+    },
+    {
+        path: '/add-user',
+        name: 'addUser',
+        component: AddUser
+    },
+    {
+        path: '/Users/:userId',
+        name: 'updateUser',
+        component: UpdateUser
     }
 ]
 

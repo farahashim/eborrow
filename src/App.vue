@@ -9,8 +9,10 @@
     <router-link to="/about">Tentang Kami</router-link>
     <router-link to="/agricultureView" >Senarai Barang</router-link>
     <router-link to="/adminView">Senarai Pentadbir</router-link>
+    <router-link to="/userView">Senarai Pengguna</router-link>
     <router-link to="/add-agriculture">Tambah Barang</router-link>
     <router-link to="/add-admin" class="split">Tambah Pentadbir</router-link>
+    <router-link to="/add-user" class="split">Tambah Pengguna</router-link>
 </div>
   <router-view/>
 

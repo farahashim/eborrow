@@ -1,4 +1,5 @@
 <template>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <div class="adminView">
     
     <div class="container">
@@ -12,7 +13,7 @@
                 v-for="admin in Admins" 
                 :key="admin.id"
                 class="list-group-item d-flex justify-content-between align-items-center">
-                  {{admin.namaPertama}}
+                  {{admin.namaPertama}} {{admin.namaAkhir}}
                   <span class="badge badge-primary badge-pill">
                       <router-link 
                         :to="{ path: `/Admins/${admin.id}` }"
@@ -29,12 +30,12 @@
 </template>
 
 <script>
-import AdminColRef from '../components/firebase'
+import AdminColRef from '../components/initializeAdmin'
 import { getDocs, doc, deleteDoc } from "firebase/firestore";
   export default {
     name: "adminView",
     components: {},
-    dataAdmin() {
+    data() {
       return {
         Admins: [],
         selectedDoc: null,
@@ -45,12 +46,12 @@ import { getDocs, doc, deleteDoc } from "firebase/firestore";
         let AdminsSnapShot = await getDocs(AdminColRef);
         let Admins = [];
         AdminsSnapShot.forEach((admin) => {
-          let adminData = admin.dataAdmin();
+          let adminData = admin.data();
           adminData.id = admin.id;
           Admins.push(adminData);
         });
         console.log(Admins);
-        this.Agricultures = Admins;
+        this.Admins = Admins;
       },
       async deleteAdmin(adminId) {
         let adminRef = doc(AdminColRef, adminId);
@@ -70,6 +71,12 @@ import { getDocs, doc, deleteDoc } from "firebase/firestore";
   text-align: center;
   padding-left: 50px;
   padding-top: 40px;
+}
+.list-groupadminv {
+  padding-top: 40px;
+  padding-left: 250px;
+  padding-right: 200px;
+  padding-bottom: 80px;
 }
 .space {
   width: 4px;

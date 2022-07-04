@@ -46,10 +46,10 @@
 </template>
 
 <script>
-import AdminColRef from '../firebase'
+import AdminColRef from '../initializeAdmin'
 import { getDoc, doc, setDoc } from 'firebase/firestore'
 export default {
-  dataAdmin() {
+  data() {
       return {
           selectedAdmin: {},
           adminId: null,

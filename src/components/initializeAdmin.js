@@ -11,10 +11,8 @@ const firebaseConfig = {
     measurementId: "G-W6T62V3K6Q"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const AgriColRef = collection(db, "Agricultures");
-export default AgriColRef;
-export const AdminColRef = collection(db, "Admins");
+const AdminColRef = collection(db, "Admins");
+export default AdminColRef;

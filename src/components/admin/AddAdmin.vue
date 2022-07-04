@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import AdminColRef from "../firebase";
+import AdminColRef from "../initializeAdmin";
 import { addDoc } from 'firebase/firestore'
 
 export default {
-    dataAdmin() {
+    data() {
         return {
             namaPertama: null,
             namaAkhir: null,
@@ -47,7 +47,7 @@ export default {
     methods: {
       async addAdmin() {
           console.log("Pentadbir Telah Ditambah");
-          const addedDoc = await addDoc(AdminColRef, this.$dataAdmin);
+          const addedDoc = await addDoc(AdminColRef, this.$data);
           alert("Document created successfully!");
           console.log(addedDoc);
           this.$router.push({name: 'adminView'});
