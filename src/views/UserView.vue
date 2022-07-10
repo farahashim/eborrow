@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import UserColRef from '../components/initializeUser'
+import UserColRef from '../components/firebase/initializeUser'
 import { getDocs, doc, deleteDoc } from "firebase/firestore";
   export default {
     name: "userView",

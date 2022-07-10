@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import AdminColRef from '../components/initializeAdmin'
+import AdminColRef from '../components/firebase/initializeAdmin'
 import { getDocs, doc, deleteDoc } from "firebase/firestore";
   export default {
     name: "adminView",

@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import AgriColRef from "../firebase";
+import AgriColRef from "../firebase/initializeAgriculture";
 import { addDoc } from 'firebase/firestore'
 
 export default {

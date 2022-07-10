@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import AgriColRef from '../components/firebase'
+import AgriColRef from '../components/firebase/initializeAgriculture'
 import { getDocs, doc, deleteDoc } from "firebase/firestore";
   export default {
     name: "agricultureView",

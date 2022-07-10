@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import AgriColRef from '../firebase'
+import AgriColRef from '../firebase/initializeAgriculture'
 import { getDoc, doc, setDoc } from 'firebase/firestore'
 export default {
   data() {

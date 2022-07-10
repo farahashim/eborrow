@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import AdminColRef from '../initializeAdmin'
+import AdminColRef from '../firebase/initializeAdmin'
 import { getDoc, doc, setDoc } from 'firebase/firestore'
 export default {
   data() {

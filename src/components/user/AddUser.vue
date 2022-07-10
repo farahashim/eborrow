@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import UserColRef from "../initializeUser";
+import UserColRef from "../firebase/initializeUser";
 import { addDoc } from 'firebase/firestore'
 
 export default {
