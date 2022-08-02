@@ -1,14 +1,13 @@
 <template>
-  <div class="add-user">
+  <div class="add-application">
     <div class="container">
         <div class="row">
-            <div class="headadduser">
+            <div class="headaddapplication">
                 <h1>Fakulti Perladangan</h1>
-                <h2>Tambah Pengguna Disini</h2>
-                <h6>Borang ini hanya digunakan kepada pengguna yang mempunyai masalah untuk mendaftar secara atas talian sahaja.</h6>
+                <h2>Tambah Permohonan Disini</h2>
             </div>
-            <div class="formadduser">
-                <form @submit.prevent="addUser">
+            <div class="formaddapplication">
+                <form @submit.prevent="addApplication">
                     <div class="form-group mb-2">
                         <label for="namaPertama">Nama Pertama</label>
                         <input type="text" class="form-control" id="namaPertama" placeholder="Contoh: MUHD RUSLAN" v-model="namaPertama">
@@ -41,6 +40,22 @@
                             <label for="noTelRumahPej">No. Telefon Rumah/Pejabat</label>
                             <input type="text" class="form-control" placeholder="Contoh: 0612345678" v-model="noTelRumahPej">
                         </div>
+                        <div class="form-group mb-2">
+                            <label for="perkara">Perkara</label>
+                            <input type="text" class="form-control" placeholder="Contoh: Cangkul" v-model="perkara">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="kuantiti">Kuantiti</label>
+                            <input type="text" class="form-control" placeholder="Contoh: 2" v-model="kuantiti">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="noSiri">No. Siri</label>
+                            <input type="text" class="form-control" placeholder="Contoh: XXX674519" v-model="noSiri">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="catatan">Catatan</label>
+                            <input type="text" class="form-control" row="5" placeholder="Contoh: Untuk kegunaan kerja lapangan." v-model="catatan">
+                        </div>
                     <div class="col mb-2">
                         <button type="submit" class="btn btn-primary">Tambah</button>
                         <div class="space"></div>
@@ -54,7 +69,7 @@
 </template>
 
 <script>
-import UserColRef from "../firebase/initializeUser";
+import AppColRef from "../firebase/initializeApplication";
 import { addDoc } from 'firebase/firestore'
 
 export default {
@@ -68,32 +83,37 @@ export default {
             semester: null,
             noTelBimbit: null,
             noTelRumahPej: null,
+            perkara: null,
+            kuantiti: null,
+            noSiri: null,
+            catatan: null,
+
         };
     },
     methods: {
-      async addUser() {
-          console.log("Pengguna Telah Ditambah");
-          const addedDoc = await addDoc(UserColRef, this.$data);
-          alert("Pengunna Berjaya Dimasukkan!");
+      async addApplication() {
+          console.log("Permohonan Telah Ditambah");
+          const addedDoc = await addDoc(AppColRef, this.$data);
+          alert("Permohonan Berjaya Dimasukkan!");
           console.log(addedDoc);
-          this.$router.push({name: 'userView'});
+          this.$router.push({name: 'applicationView'});
       },
     },
 };
 </script>
 
 <style>
-.headadduser {
+.headaddapplication {
     text-align: center;
     padding-top: 40px;
     padding-bottom: 20px;
 }
-.formadduser .form-group {
+.formaddapplication .form-group {
     padding-left: 250px;
     padding-right: 80px;
     padding-top: 12px;
 }
-.formadduser .col {
+.formaddapplication .col {
     padding-top: 20px;
     padding-left: 550px;
     padding-bottom: 40px;

@@ -1,15 +1,15 @@
 <template>
-  <div class="home">
-
-  </div>
+  <ApplicationView />
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+import ApplicationView from './ApplicationView.vue';
 
-export default {
+export default defineComponent({
   name: 'HomeView',
   components: {
-
-  }
-}
+    ApplicationView,
+  },
+});
 </script>

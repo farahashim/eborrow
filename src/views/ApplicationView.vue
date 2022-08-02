@@ -1,25 +1,25 @@
 <template>
-  <div class="userView">
+  <div class="applicationView">
     
     <div class="container">
         <div class="head">
             <h1>Fakulti Perladangan</h1>
-            <h2>Senarai Penuh Pengguna</h2>
+            <h2>Senarai Penuh Permohonan</h2>
         </div>
         <div class="list-group">
           <ul>
             <li 
-              v-for="user in Users" 
-              :key="user.id"
+              v-for="application in Applications" 
+              :key="application.id"
               class="list-group-item d-flex justify-content-between align-items-center">
-                {{user.namaPertama}} {{user.namaAkhir}}
+                {{application.namaPertama}} {{application.namaAkhir}}
                 <span class="badge badge-primary badge-pill">
                     <router-link 
-                      :to="{ path: `/Users/${user.id}` }"
+                      :to="{ path: `/Applications/${application.id}` }"
                         class="btn btn-primary ml-2"
                     >Kemas Kini</router-link>
                     <div class="space"></div>
-                    <a href="#" class="btn btn-danger" @click="deleteUser(user.id)">Padam</a>
+                    <a href="#" class="btn btn-danger" @click="deleteApplication(application.id)">Padam</a>
                 </span>
             </li>
           </ul>
@@ -30,44 +30,44 @@
 </template>
 
 <script>
-import UserColRef from '../components/firebase/initializeUser'
+import AppColRef from '../components/firebase/initializeApplication'
 import { getDocs, doc, deleteDoc } from "firebase/firestore";
   export default {
-    name: "userView",
+    name: "applicationView",
     components: {},
     data() {
       return {
-        Users: [],
+        Applications: [],
         selectedDoc: null,
       };
     },
     methods: {
-      async fetchUsers() {
-        let UsersSnapShot = await getDocs(UserColRef);
-        let Users = [];
-        UsersSnapShot.forEach((user) => {
-          let userData = user.data();
-          userData.id = user.id;
-          Users.push(userData);
+      async fetchApplications() {
+        let ApplicationsSnapShot = await getDocs(AppColRef);
+        let Applications = [];
+        ApplicationsSnapShot.forEach((application) => {
+          let applicationData = application.data();
+          applicationData.id = application.id;
+          Applications.push(applicationData);
         });
-        console.log(Users);
-        this.Users = Users;
+        console.log(Applications);
+        this.Applications = Applications;
       },
-      async deleteUser(userId) {
-        let userRef = doc(UserColRef, userId);
-        await deleteDoc(userRef);
-        alert("Pengguna berjaya dipadam!");
+      async deleteApplication(applicationId) {
+        let applicationRef = doc(AppColRef, applicationId);
+        await deleteDoc(applicationRef);
+        alert("Permohonan berjaya dipadam!");
         this.$router.go();
       },
     },
     created() {
-      this.fetchUsers();
+      this.fetchApplications();
     },
 };
 </script>
 
 <style scoped>
-.userView {
+.applicationView {
   height: 100%;
   padding-top: 40px;
 }

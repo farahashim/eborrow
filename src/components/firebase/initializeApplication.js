@@ -14,5 +14,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const UserColRef = collection(db, "Users");
-export default UserColRef;
+const AppColRef = collection(db, "Applications");
+export default AppColRef;

@@ -1,17 +1,16 @@
 <template>
   <div class="topnav">
     <nav>
-      <router-link to="/">HALAMAN UTAMA</router-link>
+      <router-link to="/">HOMEPAGE</router-link>
     </nav>
   </div>
   <div class="sidenav">
-    <router-link to="/add-application" class="split">Tambah Permohonan yang Diluluskan</router-link>
-    <br><router-link to="/agricultureView" >Senarai Barang</router-link>
-    <router-link to="/adminView">Senarai Pentadbir</router-link>
-    <br><router-link to="/add-agriculture">Tambah Barang</router-link>
-    <router-link to="/add-admin" class="split">Tambah Pentadbir</router-link>
-    <br><br><br><br><br><br><br><router-link to="/about">Tentang Kami</router-link>
-    
+    <router-link to="/add-application">Add Application<br></router-link>
+    <router-link to="/agricultureView">List of Items</router-link>
+    <router-link to="/adminView">List of Administrator</router-link>
+    <router-link to="/add-agriculture">Add Items</router-link>
+    <router-link to="/add-admin">Add Administrator</router-link>
+    <router-link to="/about">About Us</router-link>
 </div>
   <router-view/>
 

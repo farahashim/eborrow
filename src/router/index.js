@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import LoginView from '../views/LoginView.vue'
-import RegisterView from '../views/RegisterView.vue'
 import AgricultureView from '../views/AgricultureView.vue'
+import ApplicationView from '../views/ApplicationView.vue'
 import AdminView from '../views/AdminView.vue'
-import UserView from '../views/UserView.vue'
 /*----------------AGRICULTURE----------------*/
 import AddAgriculture from '../components/agriculture/AddAgriculture.vue'
 import UpdateAgriculture from '../components/agriculture/UpdateAgriculture.vue'
@@ -12,8 +10,8 @@ import UpdateAgriculture from '../components/agriculture/UpdateAgriculture.vue'
 import AddAdmin from '../components/admin/AddAdmin.vue'
 import UpdateAdmin from '../components/admin/UpdateAdmin.vue'
 /*-------------------USER--------------------*/
-import AddUser from '../components/user/AddUser.vue'
-import UpdateUser from '../components/user/UpdateUser.vue'
+import AddApplication from '../components/application/AddApplication.vue'
+import UpdateApplication from '../components/application/UpdateApplication.vue'
 
 const routes = [{
         path: '/',
@@ -30,29 +28,19 @@ const routes = [{
             import ( /* webpackChunkName: "about" */ '../views/AboutView.vue')
     },
     {
-        path: '/login',
-        name: 'login',
-        component: LoginView
-    },
-    {
-        path: '/register',
-        name: 'register',
-        component: RegisterView
-    },
-    {
         path: '/agricultureView',
         name: 'agricultureView',
         component: AgricultureView
     },
     {
+        path: '/applicationView',
+        name: 'applicationView',
+        component: ApplicationView
+    },
+    {
         path: '/adminView',
         name: 'adminView',
         component: AdminView
-    },
-    {
-        path: '/userView',
-        name: 'userView',
-        component: UserView
     },
     {
         path: '/add-agriculture',
@@ -75,14 +63,14 @@ const routes = [{
         component: UpdateAdmin
     },
     {
-        path: '/add-user',
-        name: 'addUser',
-        component: AddUser
+        path: '/add-application',
+        name: 'addApplication',
+        component: AddApplication
     },
     {
-        path: '/Users/:userId',
-        name: 'updateUser',
-        component: UpdateUser
+        path: '/Applications/:applicationId',
+        name: 'updateApplication',
+        component: UpdateApplication
     }
 ]
 
